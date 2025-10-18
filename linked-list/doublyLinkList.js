@@ -42,14 +42,44 @@ class DoublyLinkList {
     this.length--;
     return this;
   }
+  shift() {
+    if (!this.head) {
+      return null;
+    }
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    }
+    let nextNodes = this.head.next;
+    nextNodes.prev = null;
+    this.head = nextNodes;
+    this.length--;
+    return this;
+  }
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+      this.length++;
+    }
+    const oldNodes = this.head;
+    oldNodes.prev = newNode;
+    newNode.next = oldNodes;
+    this.head = newNode;
+    this.length++;
+    return this;
+  }
 }
 const list = new DoublyLinkList();
-// list.push(2);
-// list.push(4);
-// list.push(6);
-// list.push(9);
+list.push(2);
+list.push(4);
+list.push(6);
+list.push(9);
 // list.pop();
 // list.unshift(10);
-list.shift();
-list.shift();
-console.log(list);
+// list.shift();
+// list.shift();
+
+// console.log(list);
+console.log(list.showList());
