@@ -70,6 +70,17 @@ class DoublyLinkList {
     this.length++;
     return this;
   }
+  showList() {
+    let arr = [];
+    let currentNode = this.head;
+    while (currentNode.next !== null) {
+      if (currentNode) {
+        arr.push(currentNode.value);
+        currentNode = currentNode.next;
+      }
+    }
+    return arr;
+  }
 }
 const list = new DoublyLinkList();
 list.push(2);
