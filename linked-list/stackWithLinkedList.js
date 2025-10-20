@@ -40,6 +40,9 @@ class BookStack {
     if (!this.top) {
       return null;
     }
+    if (this.top === this.bottom) {
+      return (this.bottom = null);
+    }
     this.top = this.top.next;
     this.length--;
     return this;

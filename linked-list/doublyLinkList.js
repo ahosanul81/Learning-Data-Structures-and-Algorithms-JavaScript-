@@ -73,7 +73,7 @@ class DoublyLinkList {
   showList() {
     let arr = [];
     let currentNode = this.head;
-    while (currentNode.next !== null) {
+    while (currentNode !== null) {
       if (currentNode) {
         arr.push(currentNode.value);
         currentNode = currentNode.next;
@@ -92,5 +92,5 @@ list.push(9);
 // list.shift();
 // list.shift();
 
-// console.log(list);
+console.log(list);
 console.log(list.showList());
